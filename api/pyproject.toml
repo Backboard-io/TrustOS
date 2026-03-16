@@ -1,7 +1,7 @@
 [project]
-name = "proofstack-api"
-version = "0.1.0"
-description = "ProofStack compliance automation API"
+name = "reassent-api"
+version = "0.1.1"
+description = "ReAssent compliance automation API"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
