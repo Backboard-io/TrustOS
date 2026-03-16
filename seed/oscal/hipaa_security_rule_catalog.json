@@ -1,0 +1,211 @@
+{
+  "catalog": {
+    "uuid": "b1e79d34-6c3a-4f2b-9e8d-0a5c7d2f1b3e",
+    "metadata": {
+      "title": "HIPAA Security Rule (45 CFR Part 164, Subpart C)",
+      "last-modified": "2025-03-15T00:00:00Z",
+      "version": "2013",
+      "oscal-version": "1.1.2"
+    },
+    "controls": [
+      {
+        "id": "HIPAA-164.308(a)(1)",
+        "title": "Security Management Process",
+        "props": [
+          {"name": "description", "value": "Implement policies and procedures to prevent, detect, contain, and correct security violations. Includes risk analysis, risk management, sanction policy, and information system activity review."},
+          {"name": "section", "value": "164.308(a)(1)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(a)(1)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.308(a)(2)",
+        "title": "Assigned Security Responsibility",
+        "props": [
+          {"name": "description", "value": "Identify the security official who is responsible for the development and implementation of the policies and procedures required by this subpart for the entity."},
+          {"name": "section", "value": "164.308(a)(2)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(a)(2)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.308(a)(3)",
+        "title": "Workforce Security",
+        "props": [
+          {"name": "description", "value": "Implement policies and procedures to ensure that all members of its workforce have appropriate access to electronic protected health information, and to prevent those workforce members who do not have access from obtaining access to electronic protected health information. Includes authorization and supervision, workforce clearance, and termination procedures."},
+          {"name": "section", "value": "164.308(a)(3)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(a)(3)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.308(a)(4)",
+        "title": "Information Access Management",
+        "props": [
+          {"name": "description", "value": "Implement policies and procedures for authorizing access to electronic protected health information that are consistent with the applicable requirements of subpart E of this part. Includes isolating healthcare clearinghouse functions, access authorization, and access establishment and modification."},
+          {"name": "section", "value": "164.308(a)(4)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(a)(4)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.308(a)(5)",
+        "title": "Security Awareness and Training",
+        "props": [
+          {"name": "description", "value": "Implement a security awareness and training program for all members of its workforce, including management. Includes security reminders, protection from malicious software, log-in monitoring, and password management."},
+          {"name": "section", "value": "164.308(a)(5)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(a)(5)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.308(a)(6)",
+        "title": "Security Incident Procedures",
+        "props": [
+          {"name": "description", "value": "Implement policies and procedures to address security incidents. Includes response and reporting procedures for security incidents affecting electronic protected health information."},
+          {"name": "section", "value": "164.308(a)(6)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(a)(6)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.308(a)(7)",
+        "title": "Contingency Plan",
+        "props": [
+          {"name": "description", "value": "Establish and implement as needed policies and procedures for responding to an emergency or other occurrence that damages systems that contain electronic protected health information. Includes data backup plan, disaster recovery plan, emergency mode operation plan, testing and revision procedures, and applications and data criticality analysis."},
+          {"name": "section", "value": "164.308(a)(7)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(a)(7)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.308(a)(8)",
+        "title": "Evaluation",
+        "props": [
+          {"name": "description", "value": "Perform a periodic technical and nontechnical evaluation, based initially upon the standards implemented under this rule and subsequently, in response to environmental or operational changes affecting the security of electronic protected health information."},
+          {"name": "section", "value": "164.308(a)(8)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(a)(8)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.308(b)(1)",
+        "title": "Business Associate Contracts and Other Arrangements",
+        "props": [
+          {"name": "description", "value": "A covered entity may permit a business associate to create, receive, maintain, or transmit electronic protected health information on the covered entity's behalf only if the covered entity obtains satisfactory assurances in accordance with 164.314(a) that the business associate will appropriately safeguard the information."},
+          {"name": "section", "value": "164.308(b)(1)"},
+          {"name": "safeguard_category", "value": "administrative"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.308(b)(1)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.310(a)(1)",
+        "title": "Facility Access Controls",
+        "props": [
+          {"name": "description", "value": "Implement policies and procedures to limit physical access to its electronic information systems and the facility or facilities in which they are housed, while ensuring that properly authorized access is allowed. Includes contingency operations, facility security plan, access control and validation procedures, and maintenance records."},
+          {"name": "section", "value": "164.310(a)(1)"},
+          {"name": "safeguard_category", "value": "physical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.310(a)(1)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.310(b)",
+        "title": "Workstation Use",
+        "props": [
+          {"name": "description", "value": "Implement policies and procedures that specify the proper functions to be performed, the manner in which those functions are to be performed, and the physical attributes of the surroundings of a specific workstation or class of workstation that can access electronic protected health information."},
+          {"name": "section", "value": "164.310(b)"},
+          {"name": "safeguard_category", "value": "physical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.310(b)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.310(c)",
+        "title": "Workstation Security",
+        "props": [
+          {"name": "description", "value": "Implement physical safeguards for all workstations that access electronic protected health information, to restrict access to authorized users."},
+          {"name": "section", "value": "164.310(c)"},
+          {"name": "safeguard_category", "value": "physical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.310(c)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.310(d)(1)",
+        "title": "Device and Media Controls",
+        "props": [
+          {"name": "description", "value": "Implement policies and procedures that govern the receipt and removal of hardware and electronic media that contain electronic protected health information into and out of a facility, and the movement of these items within the facility. Includes disposal, media re-use, accountability, and data backup and storage."},
+          {"name": "section", "value": "164.310(d)(1)"},
+          {"name": "safeguard_category", "value": "physical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.310(d)(1)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.312(a)(1)",
+        "title": "Access Control",
+        "props": [
+          {"name": "description", "value": "Implement technical policies and procedures for electronic information systems that maintain electronic protected health information to allow access only to those persons or software programs that have been granted access rights as specified in 164.308(a)(4). Includes unique user identification, emergency access procedure, automatic logoff, and encryption/decryption."},
+          {"name": "section", "value": "164.312(a)(1)"},
+          {"name": "safeguard_category", "value": "technical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.312(a)(1)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.312(b)",
+        "title": "Audit Controls",
+        "props": [
+          {"name": "description", "value": "Implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information."},
+          {"name": "section", "value": "164.312(b)"},
+          {"name": "safeguard_category", "value": "technical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.312(b)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.312(c)(1)",
+        "title": "Integrity",
+        "props": [
+          {"name": "description", "value": "Implement policies and procedures to protect electronic protected health information from improper alteration or destruction. Includes authentication mechanisms to corroborate that ePHI has not been altered or destroyed in an unauthorized manner."},
+          {"name": "section", "value": "164.312(c)(1)"},
+          {"name": "safeguard_category", "value": "technical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.312(c)(1)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.312(d)",
+        "title": "Person or Entity Authentication",
+        "props": [
+          {"name": "description", "value": "Implement procedures to verify that a person or entity seeking access to electronic protected health information is the one claimed."},
+          {"name": "section", "value": "164.312(d)"},
+          {"name": "safeguard_category", "value": "technical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.312(d)"}
+        ]
+      },
+      {
+        "id": "HIPAA-164.312(e)(1)",
+        "title": "Transmission Security",
+        "props": [
+          {"name": "description", "value": "Implement technical security measures to guard against unauthorized access to electronic protected health information that is being transmitted over an electronic communications network. Includes integrity controls and encryption."},
+          {"name": "section", "value": "164.312(e)(1)"},
+          {"name": "safeguard_category", "value": "technical"},
+          {"name": "implementation_spec", "value": "required"},
+          {"name": "citation", "value": "45 CFR §164.312(e)(1)"}
+        ]
+      }
+    ]
+  }
+}

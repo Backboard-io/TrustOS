@@ -1,0 +1,267 @@
+# Compliance Masonry mappings: HIPAA Security Rule controls → automated check IDs
+# Each control maps to Prowler check IDs, Steampipe query names, and CloudQuery tables.
+# tool_id values: prowler, steampipe, cloudquery
+
+version: "1.0"
+framework: "HIPAA-Security-Rule"
+
+mappings:
+  # ──────────────────────────────────────────────────────────────
+  # ADMINISTRATIVE SAFEGUARDS
+  # ──────────────────────────────────────────────────────────────
+
+  - control_external_id: "HIPAA-164.308(a)(1)"
+    name: "Security Management Process"
+    checks:
+      - tool_id: prowler
+        external_control_id: iam_account_security_questions_are_registered_in_the_aws_account
+      - tool_id: prowler
+        external_control_id: guardduty_is_enabled
+      - tool_id: prowler
+        external_control_id: securityhub_enabled
+      - tool_id: prowler
+        external_control_id: config_recorder_all_regions_enabled
+      - tool_id: steampipe
+        external_control_id: aws_securityhub_finding_aggregator
+      - tool_id: cloudquery
+        external_control_id: aws_guardduty_detectors
+
+  - control_external_id: "HIPAA-164.308(a)(2)"
+    name: "Assigned Security Responsibility"
+    checks:
+      - tool_id: prowler
+        external_control_id: iam_root_mfa_enabled
+      - tool_id: prowler
+        external_control_id: iam_support_role_created
+      - tool_id: cloudquery
+        external_control_id: aws_iam_users
+
+  - control_external_id: "HIPAA-164.308(a)(3)"
+    name: "Workforce Security"
+    checks:
+      - tool_id: prowler
+        external_control_id: iam_user_mfa_enabled_console_access
+      - tool_id: prowler
+        external_control_id: iam_no_root_access_key
+      - tool_id: prowler
+        external_control_id: iam_user_accesskey_unused
+      - tool_id: prowler
+        external_control_id: iam_user_console_access_unused
+      - tool_id: steampipe
+        external_control_id: aws_iam_credential_report
+      - tool_id: cloudquery
+        external_control_id: aws_iam_users
+
+  - control_external_id: "HIPAA-164.308(a)(4)"
+    name: "Information Access Management"
+    checks:
+      - tool_id: prowler
+        external_control_id: iam_policy_attached_only_to_group_or_roles
+      - tool_id: prowler
+        external_control_id: iam_aws_attached_policy_no_administrative_privileges
+      - tool_id: prowler
+        external_control_id: iam_customer_attached_policy_no_administrative_privileges
+      - tool_id: prowler
+        external_control_id: s3_bucket_public_access_block_enabled
+      - tool_id: steampipe
+        external_control_id: aws_iam_policy_analysis
+      - tool_id: cloudquery
+        external_control_id: aws_iam_policies
+
+  - control_external_id: "HIPAA-164.308(a)(5)"
+    name: "Security Awareness and Training"
+    checks:
+      - tool_id: prowler
+        external_control_id: iam_password_policy_minimum_length_14
+      - tool_id: prowler
+        external_control_id: iam_password_policy_reuse_24
+      - tool_id: prowler
+        external_control_id: iam_password_policy_uppercase
+      - tool_id: prowler
+        external_control_id: iam_password_policy_lowercase
+      - tool_id: prowler
+        external_control_id: iam_password_policy_number
+      - tool_id: prowler
+        external_control_id: iam_password_policy_symbol
+      - tool_id: cloudquery
+        external_control_id: aws_iam_password_policies
+
+  - control_external_id: "HIPAA-164.308(a)(6)"
+    name: "Security Incident Procedures"
+    checks:
+      - tool_id: prowler
+        external_control_id: guardduty_is_enabled
+      - tool_id: prowler
+        external_control_id: cloudtrail_multi_region_enabled
+      - tool_id: prowler
+        external_control_id: cloudwatch_alarm_actions_enabled
+      - tool_id: steampipe
+        external_control_id: aws_cloudtrail_trail_analysis
+      - tool_id: cloudquery
+        external_control_id: aws_cloudtrail_trails
+
+  - control_external_id: "HIPAA-164.308(a)(7)"
+    name: "Contingency Plan"
+    checks:
+      - tool_id: prowler
+        external_control_id: rds_instance_backup_enabled
+      - tool_id: prowler
+        external_control_id: dynamodb_tables_pitr_enabled
+      - tool_id: prowler
+        external_control_id: s3_bucket_versioning_enabled
+      - tool_id: prowler
+        external_control_id: ec2_ebs_volume_snapshots_exists
+      - tool_id: steampipe
+        external_control_id: aws_rds_db_instance_backup
+      - tool_id: cloudquery
+        external_control_id: aws_rds_instances
+
+  - control_external_id: "HIPAA-164.308(a)(8)"
+    name: "Evaluation"
+    checks:
+      - tool_id: prowler
+        external_control_id: securityhub_enabled
+      - tool_id: prowler
+        external_control_id: config_recorder_all_regions_enabled
+      - tool_id: steampipe
+        external_control_id: aws_config_compliance_detail
+      - tool_id: cloudquery
+        external_control_id: aws_config_rules
+
+  - control_external_id: "HIPAA-164.308(b)(1)"
+    name: "Business Associate Contracts"
+    checks:
+      - tool_id: prowler
+        external_control_id: organizations_scp_check_deny_regions
+      - tool_id: cloudquery
+        external_control_id: aws_organizations_accounts
+
+  # ──────────────────────────────────────────────────────────────
+  # PHYSICAL SAFEGUARDS
+  # ──────────────────────────────────────────────────────────────
+
+  - control_external_id: "HIPAA-164.310(a)(1)"
+    name: "Facility Access Controls"
+    checks:
+      - tool_id: prowler
+        external_control_id: ec2_instance_imdsv2_enabled
+      - tool_id: prowler
+        external_control_id: vpc_flow_logs_enabled
+      - tool_id: cloudquery
+        external_control_id: aws_ec2_instances
+
+  - control_external_id: "HIPAA-164.310(b)"
+    name: "Workstation Use"
+    checks:
+      - tool_id: prowler
+        external_control_id: ec2_instance_managed_by_ssm
+      - tool_id: prowler
+        external_control_id: ssm_managed_compliant_patching
+      - tool_id: cloudquery
+        external_control_id: aws_ssm_instances
+
+  - control_external_id: "HIPAA-164.310(c)"
+    name: "Workstation Security"
+    checks:
+      - tool_id: prowler
+        external_control_id: ec2_instance_managed_by_ssm
+      - tool_id: prowler
+        external_control_id: ec2_securitygroup_default_restrict_traffic
+      - tool_id: cloudquery
+        external_control_id: aws_ec2_security_groups
+
+  - control_external_id: "HIPAA-164.310(d)(1)"
+    name: "Device and Media Controls"
+    checks:
+      - tool_id: prowler
+        external_control_id: ec2_ebs_default_encryption
+      - tool_id: prowler
+        external_control_id: rds_instance_storage_encrypted
+      - tool_id: prowler
+        external_control_id: s3_bucket_default_encryption
+      - tool_id: cloudquery
+        external_control_id: aws_ec2_ebs_volumes
+
+  # ──────────────────────────────────────────────────────────────
+  # TECHNICAL SAFEGUARDS
+  # ──────────────────────────────────────────────────────────────
+
+  - control_external_id: "HIPAA-164.312(a)(1)"
+    name: "Access Control"
+    checks:
+      - tool_id: prowler
+        external_control_id: iam_user_mfa_enabled_console_access
+      - tool_id: prowler
+        external_control_id: iam_root_mfa_enabled
+      - tool_id: prowler
+        external_control_id: cognito_user_pool_mfa_enabled
+      - tool_id: prowler
+        external_control_id: iam_aws_attached_policy_no_administrative_privileges
+      - tool_id: steampipe
+        external_control_id: aws_iam_access_advisor
+      - tool_id: cloudquery
+        external_control_id: aws_iam_users
+
+  - control_external_id: "HIPAA-164.312(b)"
+    name: "Audit Controls"
+    checks:
+      - tool_id: prowler
+        external_control_id: cloudtrail_multi_region_enabled
+      - tool_id: prowler
+        external_control_id: cloudtrail_s3_dataevents_read_enabled
+      - tool_id: prowler
+        external_control_id: cloudtrail_s3_dataevents_write_enabled
+      - tool_id: prowler
+        external_control_id: cloudtrail_cloudwatch_logging_enabled
+      - tool_id: prowler
+        external_control_id: cloudwatch_log_group_retention_policy_specific_days_enabled
+      - tool_id: steampipe
+        external_control_id: aws_cloudtrail_trail_analysis
+      - tool_id: cloudquery
+        external_control_id: aws_cloudtrail_trails
+
+  - control_external_id: "HIPAA-164.312(c)(1)"
+    name: "Integrity"
+    checks:
+      - tool_id: prowler
+        external_control_id: cloudtrail_log_file_validation_enabled
+      - tool_id: prowler
+        external_control_id: s3_bucket_object_lock_enabled
+      - tool_id: prowler
+        external_control_id: rds_instance_deletion_protection
+      - tool_id: steampipe
+        external_control_id: aws_s3_bucket_object_lock
+      - tool_id: cloudquery
+        external_control_id: aws_s3_buckets
+
+  - control_external_id: "HIPAA-164.312(d)"
+    name: "Person or Entity Authentication"
+    checks:
+      - tool_id: prowler
+        external_control_id: iam_user_mfa_enabled_console_access
+      - tool_id: prowler
+        external_control_id: iam_root_hardware_mfa_enabled
+      - tool_id: prowler
+        external_control_id: iam_root_mfa_enabled
+      - tool_id: prowler
+        external_control_id: cognito_user_pool_mfa_enabled
+      - tool_id: cloudquery
+        external_control_id: aws_iam_virtual_mfa_devices
+
+  - control_external_id: "HIPAA-164.312(e)(1)"
+    name: "Transmission Security"
+    checks:
+      - tool_id: prowler
+        external_control_id: acm_certificates_expiration_check
+      - tool_id: prowler
+        external_control_id: elb_ssl_listeners
+      - tool_id: prowler
+        external_control_id: s3_bucket_secure_transport_policy
+      - tool_id: prowler
+        external_control_id: apigateway_restapi_client_certificate_enabled
+      - tool_id: prowler
+        external_control_id: rds_instance_transport_encrypted
+      - tool_id: steampipe
+        external_control_id: aws_acm_certificate_transparency
+      - tool_id: cloudquery
+        external_control_id: aws_acm_certificates

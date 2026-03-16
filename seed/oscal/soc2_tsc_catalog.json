@@ -1,0 +1,88 @@
+{
+  "catalog": {
+    "uuid": "a0d68c85-5a2f-4e1b-8c3d-9f7e2b1a4c6d",
+    "metadata": {
+      "title": "SOC 2 Trust Services Criteria (TSC) - Security",
+      "last-modified": "2025-03-15T00:00:00Z",
+      "version": "2017",
+      "oscal-version": "1.1.2"
+    },
+    "controls": [
+      {
+        "id": "CC1.1",
+        "title": "The entity specifies objectives with sufficient clarity",
+        "props": [{"name": "description", "value": "Control objective for commitment to integrity and ethical values."}]
+      },
+      {
+        "id": "CC1.2",
+        "title": "The board of directors demonstrates independence from management",
+        "props": [{"name": "description", "value": "Governance and management structure."}]
+      },
+      {
+        "id": "CC2.1",
+        "title": "The entity has an identified security policy",
+        "props": [{"name": "description", "value": "Security policy and communication."}]
+      },
+      {
+        "id": "CC3.1",
+        "title": "The entity has a structure, reporting lines, and appropriate authorities",
+        "props": [{"name": "description", "value": "Organizational structure and assignment of responsibility."}]
+      },
+      {
+        "id": "CC4.1",
+        "title": "The entity has a process to identify, select, and develop people",
+        "props": [{"name": "description", "value": "Commitment to competence."}]
+      },
+      {
+        "id": "CC5.1",
+        "title": "The entity holds individuals accountable for their internal control responsibilities",
+        "props": [{"name": "description", "value": "Accountability."}]
+      },
+      {
+        "id": "CC6.1",
+        "title": "The entity implements logical access security measures",
+        "props": [{"name": "description", "value": "Logical and physical access controls."}]
+      },
+      {
+        "id": "CC6.2",
+        "title": "The entity restricts access to types of data and system components",
+        "props": [{"name": "description", "value": "Access restrictions to support confidentiality and integrity."}]
+      },
+      {
+        "id": "CC6.3",
+        "title": "The entity restricts logical access to the system",
+        "props": [{"name": "description", "value": "Least privilege and access authorization."}]
+      },
+      {
+        "id": "CC6.6",
+        "title": "The entity implements logical access security software and infrastructure",
+        "props": [{"name": "description", "value": "System access controls including MFA and encryption."}]
+      },
+      {
+        "id": "CC7.1",
+        "title": "The entity has procedures to detect and respond to security events",
+        "props": [{"name": "description", "value": "Detection and monitoring of security events."}]
+      },
+      {
+        "id": "CC7.2",
+        "title": "The entity monitors system operations and responds to anomalies",
+        "props": [{"name": "description", "value": "Change management and incident response."}]
+      },
+      {
+        "id": "CC8.1",
+        "title": "The entity authorizes, designs, develops, and implements changes",
+        "props": [{"name": "description", "value": "Change management lifecycle."}]
+      },
+      {
+        "id": "CC9.1",
+        "title": "The entity identifies, selects, and develops risk mitigation activities",
+        "props": [{"name": "description", "value": "Risk assessment and mitigation."}]
+      },
+      {
+        "id": "CC9.2",
+        "title": "The entity assesses and manages risks associated with vendors",
+        "props": [{"name": "description", "value": "Vendor and supplier risk management."}]
+      }
+    ]
+  }
+}
