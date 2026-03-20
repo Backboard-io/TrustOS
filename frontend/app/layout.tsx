@@ -5,7 +5,7 @@ import { LayoutShell } from "./components/LayoutShell";
 import { AuthGuard } from "@/app/components/AuthGuard";
 
 export const metadata: Metadata = {
-  title: "ReAssent",
+  title: "TrustOS",
   description: "Compliance automation platform",
   icons: {
     icon: "/favicon.png",

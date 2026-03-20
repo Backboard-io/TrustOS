@@ -48,7 +48,7 @@ class AppService:
         # Provision a dedicated BB assistant for this app's compliance data
         asst = await self._client.create_assistant(
             name=f"proofstack-app-{name[:40]}",
-            system_prompt="Compliance data store for ProofStack app.",
+            system_prompt="Compliance data store for TrustOS app.",
         )
         app_assistant_id = str(asst.assistant_id)
 

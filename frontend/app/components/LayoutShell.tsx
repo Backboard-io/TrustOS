@@ -6,7 +6,7 @@ import { Sidebar } from "./Sidebar";
 import { ReleaseNotesModal } from "./ReleaseNotesModal";
 
 const PUBLIC_PATHS = ["/login", "/signup"];
-const APP_VERSION = "0.1.0";
+const APP_VERSION = "0.1.2";
 
 export function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

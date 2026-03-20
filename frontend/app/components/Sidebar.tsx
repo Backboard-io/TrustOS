@@ -165,7 +165,7 @@ function SidebarInner() {
         {!collapsed ? (
           <>
             <Link href="/" className="flex items-center flex-1 min-w-0">
-              <Image src="/assets/logo.png" alt="ReAssent" width={100} height={28} className="object-contain" priority />
+              <Image src="/assets/logo.png" alt="TrustOS" width={100} height={28} className="object-contain" priority />
             </Link>
             <button
               onClick={() => setCollapsed(true)}

@@ -1,1 +1,1 @@
-"""ProofStack compliance automation API."""
+"""TrustOS compliance automation API."""

@@ -1,4 +1,4 @@
-"""ProofStack API entrypoint."""
+"""TrustOS API entrypoint."""
 
 from contextlib import asynccontextmanager
 

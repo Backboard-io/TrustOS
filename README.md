@@ -1,76 +1,93 @@
-# ReAssent
+<p align="center">
+  <img src="frontend/assets/logo.png" alt="TrustOS" width="280" />
+</p>
 
-**Compliance automation for teams that ship fast.**
+<p align="center">
+  <strong>Compliance that doesn’t kill your velocity.</strong><br />
+  Open-source SOC 2 & HIPAA automation — scans, evidence, workflows, auditor handoff — without the $80k/year sticker shock.
+</p>
 
-ReAssent is an open-source compliance platform that eliminates the busywork of SOC 2 and HIPAA audits. Connect your cloud, run automated scans, collect evidence, and hand auditors a ready-made bundle — all without a dedicated compliance team.
+<p align="center">
+  <a href="#quickstart">Quickstart</a> ·
+  <a href="#why-trustos">Why TrustOS</a> ·
+  <a href="#feature-overview">Features</a> ·
+  <a href="#architecture">Architecture</a> ·
+  <a href="#contributing">Contributing</a>
+</p>
 
 ---
 
-## Why ProofStack?
+## The one-liner
 
-Most compliance tools cost $20–80k/year and still require months of manual work. ProofStack is self-hosted, framework-aware, and fully automated.
-
-- **Automated evidence collection** — Prowler, Steampipe, Checkov, Trivy, and CloudQuery run on demand or on a schedule, mapping findings directly to controls.
-- **Zero-database architecture** — All data lives in [Backboard](https://backboard.io) assistant memories. No Postgres to manage, no migrations.
-- **Durable workflows** — Long-running scans and people processes run on Temporal, so nothing gets lost if a process crashes.
-- **Auditor-ready exports** — Generate a signed JSON bundle with one click and share it via the built-in auditor portal.
+**Stop treating compliance like a parallel universe.** TrustOS runs your scanners, maps results to controls, stores evidence, and ships workflows your team will actually finish — then hands auditors a bundle that doesn’t require a shared drive archaeology expedition.
 
 ---
 
-## Frameworks Supported
+## Why TrustOS?
+
+| The old way | The TrustOS way |
+|-------------|-----------------|
+| Spreadsheet cosplay | Controls + history in the product |
+| “We’ll circle back post-launch” | Temporal-backed workflows that **survive restarts** |
+| Another Postgres to babysit | **Zero-database app data layer** — assistants + memories on [Backboard](https://backboard.io) |
+| Enterprise invoice + enterprise slog | **Self-hosted**, framework-aware, automation-first |
+
+Most compliance platforms tax you like a luxury SUV and still leave you doing the assembly. TrustOS is built for teams that ship fast and audit honestly.
+
+---
+
+## Frameworks
 
 | Framework | Status |
-|---|---|
-| SOC 2 TSC (AICPA) | ✅ Active |
-| HIPAA Security Rule | ✅ Active |
-| FedRAMP Moderate | 🔜 Coming soon |
-| ISO 27001 | 🔜 Coming soon |
-| PCI-DSS | 🔜 Coming soon |
+|-----------|--------|
+| SOC 2 TSC (AICPA) | Active |
+| HIPAA Security Rule | Active |
+| FedRAMP Moderate | Coming soon |
+| ISO 27001 | Coming soon |
+| PCI-DSS | Coming soon |
 
 ---
 
-## Feature Overview
+## Feature overview
 
-### Control Library
-Browse and filter controls by framework, track implementation status, and view cross-framework mappings and history.
+### Control library
 
-### Assessment Runs
-Trigger scans against your cloud environment (Prowler, Steampipe, Checkov, Trivy, CloudQuery). Results automatically map to controls and update your posture score.
+Browse and filter by framework, track implementation status, and see cross-framework mappings with history.
 
-### Evidence Vault
-Upload and link evidence artifacts (screenshots, exports, configs) to specific controls or assessment runs. Stored in S3.
+### Assessment runs
 
-### Posture Dashboard
-Live pass/fail/NA/error breakdown across your latest run, segmented by framework. Know your compliance posture in seconds.
+Fire cloud scans (Prowler, Steampipe, Checkov, Trivy, CloudQuery). Results map to controls and refresh your posture score — no manual copy-paste pipeline.
 
-### HIPAA Module
-A dedicated workspace covering every operational requirement of the HIPAA Security Rule:
+### Evidence vault
 
-- PHI asset registry
-- BAA vendor tracker
-- Workforce training records
-- Risk assessments
-- Incident log
-- Contingency plans
-- Access reviews
-- Policy acknowledgements
-- HIPAA audit log
-- HIPAA-specific evidence export
+Upload and link artifacts to controls or runs. Stored in S3 (or LocalStack in dev).
+
+### Posture dashboard
+
+Live pass / fail / N/A / error breakdown from your latest run, sliced by framework. Know where you stand in seconds, not slides.
+
+### HIPAA module
+
+A dedicated workspace for the Security Rule: PHI registry, BAAs, training, risk assessments, incidents, contingency, access reviews, policy acknowledgements, HIPAA audit log, and HIPAA-tuned exports.
 
 ### Workflows
-- **People lifecycle** — Onboarding/offboarding task checklists, driven by Temporal
-- **Access review campaigns** — Schedule reviews, collect attestations
-- **Policy approvals** — Route policies to approvers, track acknowledgements
-- **Vendor management** — Track BAAs, document expiry alerts
+
+- **People lifecycle** — onboarding / offboarding checklists on Temporal  
+- **Access review campaigns** — schedule, collect attestations  
+- **Policy approvals** — route and acknowledge  
+- **Vendor management** — BAAs, expiry nudges  
 
 ### Remediation
-Push failing control findings directly to Slack or Jira as remediation tickets.
 
-### Auditor Portal
-Invite auditors to a scoped workspace. They submit PBC (Provided By Client) requests, you fulfill them. No email chains, no shared drives.
+Push failing findings to Slack or Jira as tickets that people can actually track.
 
-### Trust Center
-Public-facing security document portal. NDA-gated document release and a security questionnaire library for prospects and customers.
+### Auditor portal
+
+Scoped workspace for auditors: PBC requests in-app, fulfillment without endless email threads.
+
+### Trust center
+
+Public security docs, NDA-gated releases, and a questionnaire library for prospects who ask the hard questions *before* the procurement call.
 
 ---
 
@@ -87,12 +104,12 @@ Public-facing security document portal. NDA-gated document release and a securit
        ┌───────▼──────┐      ┌──────────▼──────┐   ┌────────▼──────┐
        │  Backboard   │      │    Temporal      │   │   S3 / Local  │
        │  (data layer)│      │  (workflows)     │   │   Stack       │
-       └──────────────┘      └─────────────────┘   └───────────────┘
+       └──────────────┘      └─────────────────┘   └──────────────┘
 ```
 
 **Backend:** FastAPI · Pydantic v2 · Backboard SDK · Temporal · boto3 · python-jose  
 **Frontend:** Next.js 15 · React 19 · TypeScript · Tailwind CSS · Chart.js · Radix UI  
-**Infrastructure:** Docker Compose · LocalStack (dev S3) · Temporal
+**Infra:** Docker Compose · LocalStack (dev S3) · Temporal
 
 ---
 
@@ -100,19 +117,19 @@ Public-facing security document portal. NDA-gated document release and a securit
 
 ### Prerequisites
 
-- Docker + Docker Compose
-- Node.js 20+
-- Python 3.11+ with `uv` (`pip install uv`)
-- A [Backboard](https://backboard.io) API key
-- Temporal running locally (or pointed at a remote cluster)
+- Docker + Docker Compose  
+- Node.js 20+  
+- Python 3.11+ with [`uv`](https://github.com/astral-sh/uv) (`pip install uv`)  
+- A [Backboard](https://backboard.io) API key  
+- Temporal (local or remote cluster)  
 
 ### 1. Clone & configure
 
 ```bash
-git clone https://github.com/your-org/reassent.git
-cd reassent
+git clone https://github.com/your-org/trustos.git
+cd trustos
 cp .env.example .env
-# Fill in BACKBOARD_API_KEY, SECRET_KEY, and S3 credentials
+# Set BACKBOARD_API_KEY, SECRET_KEY, and S3 credentials
 ```
 
 ### 2. Start everything
@@ -121,22 +138,22 @@ cp .env.example .env
 ./start.sh
 ```
 
-This starts LocalStack (S3), creates the evidence bucket, runs the FastAPI server, and starts the Next.js frontend.
+Spins up LocalStack (S3), ensures the evidence bucket exists, runs FastAPI, and starts Next.js.
 
 | Service | URL |
-|---|---|
+|---------|-----|
 | Frontend | http://localhost:3000 |
 | API | http://localhost:8000 |
-| API Docs (Swagger) | http://localhost:8000/docs |
+| API docs (Swagger) | http://localhost:8000/docs |
 | LocalStack S3 | http://localhost:4566 |
 
-### 3. Sign up and create your first workspace
+### 3. First workspace
 
-Open [http://localhost:3000](http://localhost:3000), create an account, then create a **Compliance App** for the framework you're targeting (SOC 2 or HIPAA). Each workspace gets an isolated Backboard assistant — no data bleeds between workspaces.
+Open [http://localhost:3000](http://localhost:3000), sign up, and create a **Compliance App** for SOC 2 or HIPAA. Each workspace gets its own Backboard assistant — isolation without extra databases.
 
 ---
 
-## Environment Variables
+## Environment variables
 
 ```bash
 # Backboard — primary data store
@@ -153,7 +170,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=60
 # S3-compatible storage
 S3_ENDPOINT_URL=http://localhost:4566
 S3_REGION=us-east-1
-S3_BUCKET=reassent-evidence
+S3_BUCKET=trustos-evidence
 S3_ACCESS_KEY_ID=
 S3_SECRET_ACCESS_KEY=
 
@@ -175,62 +192,60 @@ JIRA_API_TOKEN=
 ## RBAC
 
 | Role | Access |
-|---|---|
-| `admin` | Full access — user management, all workspaces |
-| `user` | Full read/write within their own apps |
-| `viewer` | Read-only across controls, evidence, runs, posture |
-| `auditor` | Scoped auditor portal — can view and upload PBC evidence |
+|------|--------|
+| `admin` | Everything — users, all workspaces |
+| `user` | Read/write within their apps |
+| `viewer` | Read-only on controls, evidence, runs, posture |
+| `auditor` | Scoped auditor portal + PBC uploads |
 
 ---
 
-## Automated Scanners
-
-ProofStack dispatches these tools via Temporal workflows and maps results to controls automatically:
+## Automated scanners
 
 | Tool | What it scans |
-|---|---|
-| [Prowler](https://github.com/prowler-cloud/prowler) | AWS cloud security posture |
-| [Steampipe](https://steampipe.io) | SQL-based cloud infrastructure queries |
-| [Checkov](https://www.checkov.io) | Terraform, CloudFormation, and IaC |
-| [Trivy](https://aquasecurity.github.io/trivy) | Container images and filesystem vulnerabilities |
-| [CloudQuery](https://www.cloudquery.io) | Cloud asset inventory sync |
+|------|---------------|
+| [Prowler](https://github.com/prowler-cloud/prowler) | AWS posture |
+| [Steampipe](https://steampipe.io) | SQL over cloud inventory |
+| [Checkov](https://www.checkov.io) | IaC (Terraform, CloudFormation, …) |
+| [Trivy](https://aquasecurity.github.io/trivy) | Images & filesystem CVEs |
+| [CloudQuery](https://www.cloudquery.io) | Asset inventory sync |
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
-ProofStack/
+trustos/
 ├── start.sh                   # One-command dev launcher
 ├── docker-compose.yml         # LocalStack
-├── api/                       # FastAPI backend
+├── api/
 │   └── src/proofstack/
-│       ├── main.py            # App factory + router mount
-│       ├── core/              # Config, auth, RBAC, Backboard store
-│       ├── api/v1/            # All route handlers
-│       ├── schemas/           # Pydantic models
-│       ├── services/          # S3, Slack, Jira, audit export
+│       ├── main.py
+│       ├── core/              # Config, auth, RBAC, Backboard
+│       ├── api/v1/
+│       ├── schemas/
+│       ├── services/          # S3, Slack, Jira, exports
 │       └── workers/           # Temporal workflows + activities
-└── frontend/                  # Next.js 15 app
+└── frontend/
     └── app/
-        ├── components/        # Sidebar, AuthGuard, LayoutShell
-        ├── contexts/          # Auth + app selection state
-        └── [feature pages]    # controls, evidence, runs, hipaa, ...
+        ├── components/
+        ├── contexts/
+        └── [feature pages]
 ```
 
 ---
 
 ## Contributing
 
-Pull requests welcome. Open an issue before starting large features.
+PRs welcome — open an issue before large swings so we don’t collide.
 
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feat/my-feature`)
-3. Make your changes with tests
-4. Open a PR against `main`
+1. Fork  
+2. Branch (`git checkout -b feat/your-idea`)  
+3. Ship changes + tests  
+4. PR to `main`
 
 ---
 
 ## License
 
-MIT © ReAssent Contributors
+MIT © TrustOS Contributors

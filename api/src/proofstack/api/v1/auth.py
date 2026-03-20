@@ -25,7 +25,7 @@ async def signup(body: UserCreate, svc: UserService = Depends(_user_service)):
     client = get_client()
     asst = await client.create_assistant(
         name=f"proofstack-user-{body.email[:40]}",
-        system_prompt="Personal assistant for ProofStack user apps.",
+        system_prompt="Personal assistant for TrustOS user apps.",
     )
 
     try:

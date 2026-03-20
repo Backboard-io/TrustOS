@@ -37,7 +37,7 @@ async def main() -> None:
     client = BackboardClient(api_key=api_key)
     asst = await client.create_assistant(
         name="proofstack-users",
-        system_prompt="Auth store for ProofStack users.",
+        system_prompt="Auth store for TrustOS users.",
     )
     print()
     print(f"✓ Created users assistant: {asst.assistant_id}")
