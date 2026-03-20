@@ -9,6 +9,27 @@ services:
       - LOCALSTACK_HOST=localhost
     volumes:
       - localstack_data:/var/lib/localstack
+    networks:
+      - app-network
+  # Single container: API + frontend (Next.js), ready for AWS App Runner.
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - localstack
+    networks:
+      - app-network
 
 volumes:
   localstack_data:
+  api_data:
+
+networks:
+  app-network:
+    driver: bridge
