@@ -1,11 +1,19 @@
 # Changelog
 
-All notable changes to ProofStack will be documented in this file.
+All notable changes to TrustOS will be documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+
+## [0.1.2] - 2026-03-20
+
+### Changed
+
+- **Branding** — consistent TrustOS naming across API package metadata, config, auth assistant prompts, `.env.example`, and frontend package name
+- **README** — viral-ready root README with hero logo, sharper positioning, and scannable structure
+- **Assets** — updated app logo (`frontend/assets`, `public/assets`) and favicon
 
 ## [0.1.0] - 2026-03-16
 

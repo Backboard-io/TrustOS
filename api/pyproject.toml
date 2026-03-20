@@ -1,7 +1,7 @@
 [project]
-name = "reassent-api"
-version = "0.1.1"
-description = "ReAssent compliance automation API"
+name = "trustos-api"
+version = "0.1.2"
+description = "TrustOS compliance automation API"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

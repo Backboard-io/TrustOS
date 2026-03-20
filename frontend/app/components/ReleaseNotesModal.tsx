@@ -12,6 +12,20 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.2",
+    date: "2026-03-20",
+    sections: [
+      {
+        heading: "Changed",
+        items: [
+          "Branding — TrustOS naming across API, env example, and frontend package",
+          "README — hero logo, positioning, and clearer navigation",
+          "Assets — logo and favicon refresh",
+        ],
+      },
+    ],
+  },
+  {
     version: "0.1.0",
     date: "2026-03-16",
     sections: [

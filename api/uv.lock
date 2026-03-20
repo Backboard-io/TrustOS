@@ -476,66 +476,6 @@ wheels = [
 ]
 
 [[package]]
-name = "proofstack-api"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "backboard-sdk" },
-    { name = "boto3" },
-    { name = "fastapi" },
-    { name = "httpx" },
-    { name = "passlib", extra = ["bcrypt"] },
-    { name = "pydantic" },
-    { name = "pydantic-settings" },
-    { name = "python-jose", extra = ["cryptography"] },
-    { name = "python-multipart" },
-    { name = "pyyaml" },
-    { name = "temporalio" },
-    { name = "uvicorn", extra = ["standard"] },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "pytest" },
-    { name = "pytest-asyncio" },
-    { name = "ruff" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-    { name = "pytest-asyncio" },
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "backboard-sdk", specifier = "==1.5.2" },
-    { name = "boto3", specifier = ">=1.35.0" },
-    { name = "fastapi", specifier = ">=0.115.0" },
-    { name = "httpx", specifier = ">=0.27.0" },
-    { name = "passlib", extras = ["bcrypt"], specifier = ">=1.7.4" },
-    { name = "pydantic", specifier = ">=2.0" },
-    { name = "pydantic-settings", specifier = ">=2.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
-    { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.24" },
-    { name = "python-jose", extras = ["cryptography"], specifier = ">=3.3.0" },
-    { name = "python-multipart", specifier = ">=0.0.12" },
-    { name = "pyyaml", specifier = ">=6.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8.0" },
-    { name = "temporalio", specifier = ">=1.8.0" },
-    { name = "uvicorn", extras = ["standard"], specifier = ">=0.32.0" },
-]
-provides-extras = ["dev"]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "pytest", specifier = ">=8.0" },
-    { name = "pytest-asyncio", specifier = ">=0.24" },
-    { name = "ruff", specifier = ">=0.8.0" },
-]
-
-[[package]]
 name = "protobuf"
 version = "6.33.5"
 source = { registry = "https://pypi.org/simple" }
@@ -924,6 +864,66 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/00/b0/899ff28464a0e17adf17476bdfac8faf4ea41870358ff2d14737e43f9e66/temporalio-1.23.0-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cf6570e0ee696f99a38d855da4441a890c7187357c16505ed458ac9ef274ed70", size = 12063601, upload-time = "2026-02-18T17:48:03.994Z" },
     { url = "https://files.pythonhosted.org/packages/ed/17/b8c6d2ec3e113c6a788322513a5ff635bdd54b3791d092ed0e273467748a/temporalio-1.23.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b82d6cca54c9f376b50e941dd10d12f7fe5b692a314fb087be72cd2898646a79", size = 12394579, upload-time = "2026-02-18T17:48:11.65Z" },
     { url = "https://files.pythonhosted.org/packages/b4/b7/f9ef7fd5ee65aef7d59ab1e95cb1b45df2fe49c17e3aa4d650ae3322f015/temporalio-1.23.0-cp310-abi3-win_amd64.whl", hash = "sha256:43c3b99a46dd329761a256f3855710c4a5b322afc879785e468bdd0b94faace6", size = 12834494, upload-time = "2026-02-18T17:48:19.071Z" },
+]
+
+[[package]]
+name = "trustos-api"
+version = "0.1.2"
+source = { editable = "." }
+dependencies = [
+    { name = "backboard-sdk" },
+    { name = "boto3" },
+    { name = "fastapi" },
+    { name = "httpx" },
+    { name = "passlib", extra = ["bcrypt"] },
+    { name = "pydantic" },
+    { name = "pydantic-settings" },
+    { name = "python-jose", extra = ["cryptography"] },
+    { name = "python-multipart" },
+    { name = "pyyaml" },
+    { name = "temporalio" },
+    { name = "uvicorn", extra = ["standard"] },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
+    { name = "ruff" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "backboard-sdk", specifier = "==1.5.2" },
+    { name = "boto3", specifier = ">=1.35.0" },
+    { name = "fastapi", specifier = ">=0.115.0" },
+    { name = "httpx", specifier = ">=0.27.0" },
+    { name = "passlib", extras = ["bcrypt"], specifier = ">=1.7.4" },
+    { name = "pydantic", specifier = ">=2.0" },
+    { name = "pydantic-settings", specifier = ">=2.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
+    { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.24" },
+    { name = "python-jose", extras = ["cryptography"], specifier = ">=3.3.0" },
+    { name = "python-multipart", specifier = ">=0.0.12" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8.0" },
+    { name = "temporalio", specifier = ">=1.8.0" },
+    { name = "uvicorn", extras = ["standard"], specifier = ">=0.32.0" },
+]
+provides-extras = ["dev"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pytest", specifier = ">=8.0" },
+    { name = "pytest-asyncio", specifier = ">=0.24" },
+    { name = "ruff", specifier = ">=0.8.0" },
 ]
 
 [[package]]
